@@ -16,13 +16,6 @@
       "name": "Floor temperature",
       "abbrev": "FT",
       "type": "NUMBER"
-    },
-    {
-      "id": "door_window_contact",
-      "description": "Input for open door/windows contacts",
-      "name": "Door / Window contact",
-      "abbrev": "DWC",
-      "type": "BOOLEAN"
     }
   ],
   "outputs": [
