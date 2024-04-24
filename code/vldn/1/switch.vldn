@@ -1,1 +1,23 @@
+pressed = get_current_value()
+state = get_state("state")
 
+now = uptime()
+
+if (pressed == 1) {
+    set_state("last_change_time_ms", now)
+    set_output("on", true)
+    set_output("off", false)
+} else {
+    diff_ms = uptime() - get_state("last_change_time_ms")
+    
+    print("diff_ms")
+    print(diff_ms)
+
+    state = !state
+    
+    set_state("state", state)
+    set_output("toggle", state)
+
+    set_output("on", false)
+    set_output("off", true)
+}

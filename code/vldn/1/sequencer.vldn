@@ -1,8 +1,61 @@
-    value = get_current_value()
-    set_output("1+", value)
-    set_output("3-", 456)
-    s = get_state("sequenceIndex")
-    print(s)
-    set_state("sequenceIndex", s + 2)
-    channel = get_current_channel()
-    print(channel)
+value = get_current_value()
+if (value == false) {
+    return
+}
+
+channel = get_current_channel()
+index = get_state("sequence_index")
+max_index = get_config("max_index")
+
+new_index = index
+
+if (channel == "reset" and value) {
+    new_index = 0
+    set_state("sequence_index", new_index)
+}
+
+if (channel == "forward" and value) {
+    new_index = index + 1
+    if (new_index > max_index) {
+        new_index = 0
+    }
+
+    set_state("sequence_index", new_index)
+}
+
+if (channel == "backward" and value) {
+    new_index = index - 1
+    if (new_index < 0) {
+        new_index = max_index
+    }
+
+    set_state("sequence_index", new_index)
+}
+
+off = false
+o1 = false
+o2 = false
+o3 = false
+o4 = false
+
+if (new_index == 0) {
+    off = true
+}
+if (new_index == 1) {
+    o1 = true
+}
+if (new_index == 2) {
+    o2 = true
+}
+if (new_index == 3) {
+    o3 = true
+}
+if (new_index == 4) {
+    o4 = true
+}
+
+set_output("off", off)
+set_output("o1", o1)
+set_output("o2", o2)
+set_output("o3", o3)
+set_output("o4", o4)

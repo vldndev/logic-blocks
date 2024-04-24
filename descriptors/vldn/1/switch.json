@@ -19,68 +19,68 @@
   ],
   "outputs": [
     {
-      "id": "C",      
-      "description": "some description",
-      "name": "onClick",
+      "id": "click",      
+      "description": "Active on a click",
+      "name": "Click",
       "abbrev": "C",
       "type": "BOOLEAN"
     },
     {
-      "id": "P",
-      "description": "some description",
-      "name": "onShortPress",
-      "abbrev": "P",
+      "id": "short_press",
+      "description": "Active on a short press",
+      "name": "Short press",
+      "abbrev": "SP",
       "type": "BOOLEAN"
     },
     {
-      "id": "LP",
-      "description": "some description",
-      "name": "onLongPress",
+      "id": "long_press",
+      "description": "Active on a long press",
+      "name": "Long press",
       "abbrev": "LP",
       "type": "BOOLEAN"
     },
     {
-      "id": "H",
-      "description": "some description",
-      "name": "onHold",
-      "abbrev": "H",
+      "id": "toggle",
+      "description": "Toggle output, active after a click",
+      "name": "Toggle",
+      "abbrev": "TG",
       "type": "BOOLEAN"
     },
     {
-      "id": "ON",
-      "description": "some description",
-      "name": "onOn",
+      "id": "on",
+      "description": "Active when switch is on",
+      "name": "ON",
       "abbrev": "ON",
       "type": "BOOLEAN"
     },
     {
-      "id": "OFF",
-      "description": "some description",
-      "name": "onOff",
+      "id": "off",
+      "description": "Active when switch is off",
+      "name": "OFF",
       "abbrev": "OFF",
       "type": "BOOLEAN"
     }
   ],
   "config": [
     {
-      "id": "cliclDuration",
-      "name": "clickDurationMs",
+      "id": "click_duration_ms",
+      "name": "clickDuration",
       "type": "NUMBER",
       "description": "Duration of a click in ms",
       "unit": "ms",
       "default": "0"
     },
     {
-      "id": "shortPressDuration",
-      "name": "shortPressDurationMs",
+      "id": "short_press_duration_ms",
+      "name": "shortPressDuration",
       "type": "NUMBER",
       "description": "Duration of a short press in ms",
       "unit": "ms",
       "default": "0"
     },
     {
-      "id": "longPressDuration",
-      "name": "longPressDurationMs",
+      "id": "long_press_duration_ms",
+      "name": "longPressDuration",
       "type": "NUMBER",
       "description": "Duration of a long press in ms",
       "unit": "ms",
@@ -89,12 +89,20 @@
   ],
   "state": [
     {
-      "id": "longChangeTime",
-      "name": "lastChangeTimeMs",
+      "id": "last_change_time_ms",
+      "name": "lastChangeTime",
       "type": "NUMBER",
       "unit": "ms",
       "description": "some description",
       "default": "0"
+    },
+    {
+      "id": "state",
+      "name": "state",
+      "type": "BOOLEAN",
+      "unit": "",
+      "description": "some description",
+      "default": "false"
     }
   ]
 }

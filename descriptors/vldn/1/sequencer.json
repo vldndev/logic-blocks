@@ -27,74 +27,53 @@
   ],
   "outputs": [
     {
-      "id": "1+",
+      "id": "off",
       "description": "",
-      "name": "onOn for channel #1",
-      "abbrev": "1+",
-      "type": "NUMBER"
+      "name": "Off",
+      "abbrev": "Off",
+      "type": "BOOLEAN"
     },
     {
-      "id": "1-",
+      "id": "o1",
       "description": "",
-      "name": "onOff for channel #1",
-      "abbrev": "1-",
-      "type": "NUMBER"
+      "name": "Output #1",
+      "abbrev": "O1",
+      "type": "BOOLEAN"
     },
     {
-      "id": "2+",
+      "id": "o2",
       "description": "",
-      "name": "onOn for channel #2",
-      "abbrev": "2+",
-      "type": "NUMBER"
+      "name": "Output #2",
+      "abbrev": "O2",
+      "type": "BOOLEAN"
     },
     {
-      "id": "2-",
+      "id": "o3",
       "description": "",
-      "name": "onOff for channel #2",
-      "abbrev": "2-",
-      "type": "NUMBER"
+      "name": "Output #3",
+      "abbrev": "O3",
+      "type": "BOOLEAN"
     },
     {
-      "id": "3+",
+      "id": "o4",
       "description": "",
-      "name": "onOn for channel #3",
-      "abbrev": "3+",
-      "type": "NUMBER"
-    },
-    {
-      "id": "3-",
-      "description": "",
-      "name": "onOff for channel #3",
-      "abbrev": "3-",
-      "type": "NUMBER"
-    },
-    {
-      "id": "4+",
-      "description": "",
-      "name": "onOn for channel #4",
-      "abbrev": "4+",
-      "type": "NUMBER"
-    },
-    {
-      "id": "4-",
-      "description": "",
-      "name": "onOff for channel #4",
-      "abbrev": "4-",
-      "type": "NUMBER"
+      "name": "Output #4",
+      "abbrev": "O4",
+      "type": "BOOLEAN"
     }
   ],
   "config": [
     {
-      "id": "sequences",
+      "id": "max_index",
       "description": "",
-      "name": "sequences",
+      "name": "Max index",
       "type": "NUMBER",
-      "default": "0"
+      "default": "4"
     }
   ],
   "state": [
     {
-      "id": "sequenceIndex",
+      "id": "sequence_index",
       "description": "",
       "name": "sequenceIndex",
       "type": "NUMBER",
