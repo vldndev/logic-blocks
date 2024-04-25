@@ -1,0 +1,66 @@
+{
+  "name": "PulseAt",
+  "group": "scheduled",
+  "description": "Sends a pulse at specified time",
+  "outputs": [
+    {
+      "id": "pulse",      
+      "description": "Pulse output",
+      "name": "Pulse",
+      "abbrev": "O",
+      "type": "BOOLEAN"
+    }
+  ],
+  "config": [
+    {
+      "id": "interval",
+      "name": "Interval",
+      "type": "NUMBER",
+      "description": "Pulse interval in seconds",
+      "unit": "",
+      "default": "1"
+    },
+    {
+      "id": "mode",
+      "name": "Mode",
+      "type": "NUMBER",
+      "description": "Scheduling mode: 0 - cron",
+      "unit": "",
+      "default": "0"
+    },
+    {
+      "id": "cron",
+      "name": "Cron",
+      "type": "STRING",
+      "description": "Cron expression",
+      "unit": "",
+      "default": "0"
+    }
+  ],
+  "state": [
+    {
+      "id": "last_output",
+      "name": "Last output",
+      "type": "BOOLEAN",
+      "unit": "",
+      "description": "Last output value",
+      "default": "false"
+    },
+    {
+      "id": "last_activation_ts",
+      "name": "Last execution timestamp",
+      "type": "NUMBER",
+      "unit": "s",
+      "description": "Last execution timestamp in seconds from epoch",
+      "default": "0"
+    },
+    {
+      "id": "next_activation_ts",
+      "name": "Next execution timestamp",
+      "type": "NUMBER",
+      "unit": "s",
+      "description": "Next execution timestamp in seconds from epoch",
+      "default": "0"
+    }
+  ]
+}
