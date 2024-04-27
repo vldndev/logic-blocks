@@ -85,6 +85,14 @@
       "description": "Duration of a long press in ms",
       "unit": "ms",
       "default": "0"
+    },
+    {
+      "id": "test",
+      "name": "test",
+      "type": "STRING",
+      "description": "Duration of a long press in ms",
+      "unit": "ms",
+      "default": "abc"
     }
   ],
   "state": [

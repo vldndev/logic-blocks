@@ -19,22 +19,6 @@
       "description": "Pulse interval in seconds",
       "unit": "",
       "default": "1"
-    },
-    {
-      "id": "mode",
-      "name": "Mode",
-      "type": "NUMBER",
-      "description": "Scheduling mode: 0 - cron",
-      "unit": "",
-      "default": "0"
-    },
-    {
-      "id": "cron",
-      "name": "Cron",
-      "type": "STRING",
-      "description": "Cron expression",
-      "unit": "",
-      "default": "0"
     }
   ],
   "state": [
