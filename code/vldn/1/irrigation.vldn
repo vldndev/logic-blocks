@@ -1,2 +1,78 @@
+channel = get_current_channel()
 
+if (channel == "callback") {
+    set_output("section_1", false)
+    set_output("section_2", false)
+    set_output("section_3", false)
+    set_output("section_4", false)
+    set_output("section_5", false)
+    set_output("section_6", false)
+    set_output("section_7", false)
+    set_output("section_8", false)
 
+    current_section = 0
+
+    callback_id = get_current_value()
+    if (callback_id == 0) {
+        set_output("pump", true)
+        callback(0, 1)
+        return
+    } else if (callback_id > 0 and callback_id < 9) {
+        current_section = callback_id
+    } else if (callback_id == 9) {
+        set_output("pump", false)
+        return
+    }
+
+    section_output = ""
+    section_enabled_cfg = ""
+    section_duration_cfg = ""
+
+    if (current_section == 1) {
+        section_output = "section_1"
+        section_enabled_cfg = "s1_enabled"
+        section_duration_cfg = "s1_duration"
+    } else if (current_section == 2) {
+        section_output = "section_2"
+        section_enabled_cfg = "s2_enabled"
+        section_duration_cfg = "s2_duration"
+    } else if (current_section == 3) {
+        section_output = "section_3"
+        section_enabled_cfg = "s3_enabled"
+        section_duration_cfg = "s3_duration"
+    } else if (current_section == 4) {
+        section_output = "section_4"
+        section_enabled_cfg = "s4_enabled"
+        section_duration_cfg = "s4_duration"
+    } else if (current_section == 5) {
+        section_output = "section_5"
+        section_enabled_cfg = "s5_enabled"
+        section_duration_cfg = "s5_duration"
+    } else if (current_section == 6) {
+        section_output = "section_6"
+        section_enabled_cfg = "s6_enabled"
+        section_duration_cfg = "s6_duration"
+    } else if (current_section == 7) {
+        section_output = "section_7"
+        section_enabled_cfg = "s7_enabled"
+        section_duration_cfg = "s7_duration"
+    } else if (current_section == 8) {
+        section_output = "section_8"
+        section_enabled_cfg = "s8_enabled"
+        section_duration_cfg = "s8_duration"
+    }
+
+    section_enabled = get_config(section_enabled_cfg)
+    section_duration = get_config(section_duration_cfg)
+
+    set_output(section_output, true)
+
+    callback(section_duration * 1000, current_section + 1)
+
+    return
+}
+
+trigger = get_current_value()
+if (trigger) {
+    callback(0, 0)
+}
